@@ -34,6 +34,10 @@ namespace TourApp.Tour
             Console.Write("Enter Capacity: ");
             tour.Capacity = int.Parse(Console.ReadLine()!);
 
+            Console.Write("Enter Tour Price: ");
+            tour.Price = (Console.ReadLine()!);
+
+
             tourService.AddTour(tour);
 
             Console.WriteLine("Tour added successfully!");
@@ -60,13 +64,14 @@ namespace TourApp.Tour
         public static void ViewAllTours()
         {
             Console.WriteLine("All Tours:");
-            foreach(TourModel t in tourService.GetAllTours())
+            foreach (TourModel t in tourService.GetAllTours())
             {
-                Console.WriteLine("ID: "+t.TourId);
-                Console.WriteLine("Title: "+t.Title);
-                Console.WriteLine("Place: "+t.Place);
-                Console.WriteLine("Date: "+t.Date);
-                Console.WriteLine("Capacity: "+t.Capacity);
+                Console.WriteLine("ID: " + t.TourId);
+                Console.WriteLine("Title: " + t.Title);
+                Console.WriteLine("Place: " + t.Place);
+                Console.WriteLine("Date: " + t.Date);
+                Console.WriteLine("Capacity: " + t.Capacity);
+                Console.WriteLine("Price: " + t.Price);
                 Console.WriteLine();
             }
         }
@@ -78,20 +83,40 @@ namespace TourApp.Tour
             t_id = Console.ReadLine()!;
 
             List<TourModel> tours = tourService.GetAllTours();
-            foreach(TourModel t in tours)
+            foreach (TourModel t in tours)
             {
-                if(t_id.Equals(t.TourId))
+                if (t_id.Equals(t.TourId))
                 {
                     Console.WriteLine("ID: " + t.TourId);
                     Console.WriteLine("Title: " + t.Title);
                     Console.WriteLine("Place: " + t.Place);
                     Console.WriteLine("Date: " + t.Date);
                     Console.WriteLine("Capacity: " + t.Capacity);
+                    Console.WriteLine("Price: " + t.Price);
                     Console.WriteLine();
                     return;
                 }
             }
             Console.WriteLine("This tour doesn't exist!");
+        }
+
+
+        public static void SearchToursbyPrice()
+        {
+            string writePrice;
+            Console.Write("Enter your wanted Price: ");
+            writePrice = Console.ReadLine()!;
+
+            List<TourModel> tours = tourService.ViewToursByPrice();
+            {
+              foreach (TourModel t in tours)
+                {
+                    if (writePrice.Equals(t.Price))
+                    {
+                        Console.WriteLine("Price: " + t.Price);
+                    }
+                }
+            }
         }
     }
 }

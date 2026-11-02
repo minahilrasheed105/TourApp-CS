@@ -46,7 +46,7 @@ namespace TourApp.Admin
                 Console.Write("Enter choice: ");
                 string choice = Console.ReadLine()!;
 
-                if ( choice == "1")
+                if (choice == "1")
                 {
                     TourUI.AddTour();
                 }
@@ -58,7 +58,7 @@ namespace TourApp.Admin
                 {
                     TourUI.ViewAllTours();
                 }
-                else if(choice == "4")
+                else if (choice == "4")
                 {
                     TourUI.SearchTour();
                 }
@@ -75,6 +75,8 @@ namespace TourApp.Admin
                     Console.WriteLine("Logging out...");
                     break;
                 }
+                //else if (choice == "8"){Console.WriteLine("View Tours Sorted By Price");
+
                 else
                 {
                     Console.WriteLine("Wrong Choice!");
