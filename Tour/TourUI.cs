@@ -75,8 +75,52 @@ namespace TourApp.Tour
                 Console.WriteLine();
             }
         }
+        
+       // public static void SearchTour()
+       // {
+           // string t_id;
+           // Console.Write("Enter Tour ID: ");
+           // t_id = Console.ReadLine()!;
 
-        public static void SearchTour()
+           // List<TourModel> tours = tourService.GetAllTours();
+            //foreach (TourModel t in tours)
+          //  {
+              //  if (t_id.Equals(t.TourId))
+              //  {
+                  //  Console.WriteLine("ID: " + t.TourId);
+                   // Console.WriteLine("Title: " + t.Title);
+                   // Console.WriteLine("Place: " + t.Place);
+                   // Console.WriteLine("Date: " + t.Date);
+                   // Console.WriteLine("Capacity: " + t.Capacity);
+                   // Console.WriteLine("Price: " + t.Price);
+                   // Console.WriteLine();
+                  //  return;
+               // }
+           // }
+            //Console.WriteLine("This tour doesn't exist!");
+       // }
+
+
+        public static void SearchToursbyPrice()
+        {
+            string writelowPrice;
+            Console.Write("Enter lowest Price: ");
+            writelowPrice = Console.ReadLine();
+
+            string writeHighPrice;
+            Console.Write("Enter  Price: ");
+            writeHighPrice = Console.ReadLine()!;
+
+            List<TourModel> tours = tourService.ViewToursByPrice();
+            {
+                foreach (TourModel t in tours)
+                {
+
+                }
+            }
+        }
+        // get tour by id Exact Match
+        public static void GettingTourbyId()
         {
             string t_id;
             Console.Write("Enter Tour ID: ");
@@ -100,21 +144,21 @@ namespace TourApp.Tour
             Console.WriteLine("This tour doesn't exist!");
         }
 
-
-        public static void SearchToursbyPrice()
+        public static void SearchToursbyName()
         {
-            string writePrice;
-            Console.Write("Enter your wanted Price: ");
-            writePrice = Console.ReadLine()!;
+            string writelowPrice;
+            Console.Write("Enter lowest Price: ");
+            writelowPrice = Console.ReadLine();
 
-            List<TourModel> tours = tourService.ViewToursByPrice();
+            string writeHighPrice;
+            Console.Write("Enter  Price: ");
+            writeHighPrice = Console.ReadLine()!;
+
+            List<TourModel> tours = tourService.ViewToursName();
             {
-              foreach (TourModel t in tours)
+                foreach (TourModel t in tours)
                 {
-                    if (writePrice.Equals(t.Price))
-                    {
-                        Console.WriteLine("Price: " + t.Price);
-                    }
+
                 }
             }
         }

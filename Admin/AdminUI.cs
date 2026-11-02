@@ -75,7 +75,7 @@ namespace TourApp.Admin
                     Console.WriteLine("Logging out...");
                     break;
                 }
-                //else if (choice == "8"){Console.WriteLine("View Tours Sorted By Price");
+               // else if (choice == "8"){Console.WriteLine("View Tours Sorted By Price");
 
                 else
                 {

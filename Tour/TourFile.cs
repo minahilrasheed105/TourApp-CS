@@ -19,7 +19,9 @@ namespace TourApp.Tour
                               tour.Title + "|" +
                               tour.Place + "|" +
                               tour.Date + "|" +
-                              tour.Capacity; //tour.Price;
+                              tour.Capacity + "|" +
+                              tour.Price;
+
 
                 lines.Add(line);
             }
@@ -46,7 +48,7 @@ namespace TourApp.Tour
                     tour.Place = data[2];
                     tour.Date = data[3];
                     tour.Capacity = int.Parse(data[4]);
-                    //tour.Price = data[5];
+                    tour.Price = data[5];
 
                     tours.Add(tour);
                 }
